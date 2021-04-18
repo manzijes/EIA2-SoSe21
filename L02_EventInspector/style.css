@@ -1,0 +1,51 @@
+body{
+    background: rgb(41, 80, 112);
+    color: aliceblue;
+    font-family: 'Baloo 2', cursive;
+    text-align: center;
+}
+
+span{
+    position: fixed;
+    width: fit-content;
+    color: black;
+    background: aliceblue;
+    border: thin solid black;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: small;
+}
+
+#btnClick{
+    margin: 5vh;
+    font-family: 'Nunito', sans-serif;
+    font-weight: normal;
+    font-size: 12pt;
+    background-color: aliceblue;
+    border: thin solid black;
+    border-radius: 4px;
+}
+
+#btnClick:hover{
+    background-color: rgb(208, 215, 221);
+}
+
+h1{
+    font-size: 19pt;
+    font-weight: lighter;
+    text-align: center;
+    margin-bottom: 4vh;
+    margin-top: 6vh;
+}
+
+div{
+    background: lightsteelblue;
+    border: 10px solid aliceblue;
+    border-radius: 4px;
+    height: 70vh;
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
