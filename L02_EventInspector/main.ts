@@ -3,10 +3,6 @@ namespace L02_EventInspector {
 
     function handleLoad(_event: Event): void {
 
-        //bonus task - find button and install click listener
-        const btnClick: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#btnClick");
-        btnClick.addEventListener("click", handleBtnClick);
-
         //install mousemove + click + keyup listeners on document
         document.addEventListener("mousemove", setInfoBox);
         document.addEventListener("click", logInfo);
@@ -23,20 +19,18 @@ namespace L02_EventInspector {
             div[i].addEventListener("click", logInfo);
             div[i].addEventListener("keyup", logInfo);
         }
-    }
 
-    //bonus task - custom event triggered by click on button
-    function handleBtnClick(_event: Event): void {
-        let btnClick: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#btnClick");
-        
         //catch on document
-        let event: CustomEvent = new CustomEvent("HELLO", {bubbles: true});
-        document.addEventListener("HELLO", function(): void {
-            console.log(event.type);
-          });
+        // let event: CustomEvent = new CustomEvent("HELLO", { bubbles: true });
+        // document.addEventListener("HELLO", function (): void {
+        //     console.log(event.target);
+        // });
 
         //dispatch on button
-        btnClick.dispatchEvent(event);
+        // let btnClick: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#btnClick");
+        // btnClick.addEventListener("click", function (): void {
+        //     btnClick.dispatchEvent(event);
+        // });
     }
 
     function setInfoBox(_event: MouseEvent): void {
@@ -56,6 +50,6 @@ namespace L02_EventInspector {
     }
 
     function logInfo(_event: Event): void {
-        console.log("type: " + _event.type + "target: " + _event.target + "currentTarget: " + _event.currentTarget + "path: " + _event.composedPath());
+        console.log("type: " + _event.type + " target: " + _event.target + " currentTarget: " + _event.currentTarget + " path: " + _event.composedPath());
     }
 }
