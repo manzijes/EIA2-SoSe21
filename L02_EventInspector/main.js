@@ -45,10 +45,7 @@ var L02_EventInspector;
         span.innerHTML = mousePosition + "<br>" + " target: " + eventTarget;
     }
     function logInfo(_event) {
-        console.log("type: " + _event.type);
-        console.log("target: " + _event.target);
-        console.log("currentTarget: " + _event.currentTarget);
-        console.log("path: " + _event.composedPath());
+        console.log("type: " + _event.type + "target: " + _event.target + "currentTarget: " + _event.currentTarget + "path: " + _event.composedPath());
     }
 })(L02_EventInspector || (L02_EventInspector = {}));
 //# sourceMappingURL=main.js.map

@@ -56,9 +56,6 @@ namespace L02_EventInspector {
     }
 
     function logInfo(_event: Event): void {
-        console.log("type: " + _event.type);
-        console.log("target: " + _event.target);
-        console.log("currentTarget: " + _event.currentTarget);
-        console.log("path: " + _event.composedPath());  
+        console.log("type: " + _event.type + "target: " + _event.target + "currentTarget: " + _event.currentTarget + "path: " + _event.composedPath());
     }
 }
