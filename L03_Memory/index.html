@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L03_MemorySettings</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="memory.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+<h1 id="headline">L03_MemorySettings</h1>   
+    <div  id="form">
+        <form>
+            <div id="pairsAmount">
+                <label for="pairs">choose a number of pairs (5-25. Default 10): </label>
+                <input type="number" name="pairs" id="pairs" min="5" max="25" step="1" value="5">
+            </div> <br>
+
+            <div id="cardSize">
+                <label for="size">choose a card size: </label>
+                80 <input type="range" id="size" name="size" min="80" max="160" value="120" step="1">160
+            </div> <br>
+            
+            <div id="background">
+                <label for="background">choose a table color: </label>
+                <input id="background" name="background" type="color" value="#4682B4">
+            </div><br>
+
+            <div id="fontColor">
+                <label for="fontColor">choose a font color: </label>
+                <input id="fontColor" name="fontColor" type="color" value="#000000"><br>
+            </div><br>
+
+            <div id="cardColor">
+                <label for="cardsColor">choose a card color: </label>
+                <input id="cardsColor" name="cardsColors" type="color" value="#ffffff"><br>
+            </div><br>
+
+            <div>
+            <p>choose a font: </p>
+                <input type="radio" id="arial" name="font" value="Arial" checked=true>
+                <label for="arial">Arial</label>
+
+                <input type="radio" id="segoeUI" name="font" value="Segoe UI">
+                <label for="segoeUI">Segoe UI</label>
+
+                <input type="radio" id="lucida" name="font" value="Lucida Sans">
+                <label for="Lucida">Lucida Sans</label>
+            </div><br>
+
+        </form>
+    </div>
+
+    <button id="btnStart" >start</button>
+
+    <div id="table"></div>
+
+</body>
+
+</html>
