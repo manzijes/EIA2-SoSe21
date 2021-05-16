@@ -44,7 +44,7 @@ var L08_MeadowCanvas;
     }
     // draw grass
     function drawGrass() {
-        crc2.fillStyle = "mediumseagreen";
+        crc2.fillStyle = "cadetblue";
         crc2.fillRect(0, (crc2.canvas.height / 2), crc2.canvas.width, (crc2.canvas.height / 2));
     }
     // draw flower
