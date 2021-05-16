@@ -26,6 +26,7 @@ namespace L08_MeadowCanvas {
         drawSun();
         drawMountains();
         drawGrass();
+        console.log("all drawn");
 
         // call function to draw flower 20 times
         for (let i: number = 0; i < 20; i++) {
