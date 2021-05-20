@@ -23,4 +23,4 @@ var L09_Farm;
     }
     L09_Farm.Animal = Animal;
 })(L09_Farm || (L09_Farm = {}));
-//# sourceMappingURL=Animal.js.map
+//# sourceMappingURL=animal.js.map
