@@ -63,10 +63,14 @@ namespace Football {
             // if left goal is reached by ball
             if (this.position.x <= 22 && this.position.y >= (canvas.height / 2) - 22 && this.position.y <= (canvas.height / 2) + 22) {
                 console.log("goal");
+                //put ball back in the middle of canvas, assign the same position as goal so it will stand still
                 this.position = new Vector (canvas.width / 2, canvas.height / 2);
                 this.target = new Vector (canvas.width / 2, canvas.height / 2);
+                //count up the score for team two
                 this.scoreTeamTwo++;
+                //write new score in html
                 scoreDOM.innerHTML = "Score: " + this.scoreTeamOne + ":" + this.scoreTeamTwo;
+                //alert to announce goal
                 alert ("Goal! That's a point for Team 2!");
             }
 

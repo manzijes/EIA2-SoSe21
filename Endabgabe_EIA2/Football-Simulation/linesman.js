@@ -26,9 +26,13 @@ var Football;
             Football.crc2.resetTransform();
         }
         move() {
+            // make the target the position of the football
             this.target = Football.football.position;
+            // get difference between target position and current position, but only the x value
             let direction = new Football.Vector(this.target.x - this.position.x, 0);
+            // multiply with velocity
             direction.scale(this.velocity);
+            // add difference to current position
             this.position.add(direction);
         }
     }

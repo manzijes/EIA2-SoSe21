@@ -90,12 +90,16 @@ var Football;
         maxVelocity2 = Number(formData.get("maxVelocity2"));
         minPrecision2 = Number(formData.get("minPrecision2"));
         maxPrecision2 = Number(formData.get("maxPrecision2"));
+        //display the chosen colors in the span elements under canvas
         let colorSpan1 = document.querySelector("#displayColor1");
         let colorSpan2 = document.querySelector("#displayColor2");
         colorSpan1.style.display = "initial";
         colorSpan2.style.display = "initial";
         colorSpan1.style.background = color1;
         colorSpan2.style.background = color2;
+        //call drawField to draw the playing field
+        //call setUpGame to create all instances needed for the simulation
+        //call update to animate the simulation
         Football.drawField();
         setUpGame();
         update();
@@ -207,11 +211,12 @@ var Football;
     }
     // called when user switches out a player
     function changePlayer(_event) {
+        //if the selected player belongs to team 1
         if (Football.selectedPlayer.team == "1") {
-            Football.selectedPlayer.number = playersTeam1.length + timesSwitched1;
-            Football.selectedPlayer.velocity = generateRandomNumber(minVelocity1, maxVelocity1);
-            Football.selectedPlayer.precision = generateRandomNumber(minPrecision1, maxPrecision1);
-            timesSwitched1++;
+            Football.selectedPlayer.number = playersTeam1.length + timesSwitched1; //change number
+            Football.selectedPlayer.velocity = generateRandomNumber(minVelocity1, maxVelocity1); //change velocity with new random numbers
+            Football.selectedPlayer.precision = generateRandomNumber(minPrecision1, maxPrecision1); //change precision with new random numbers
+            timesSwitched1++; //count up how many times a player of team 1 has been switched, so the same number won't be assigned twice to different players
         }
         else {
             Football.selectedPlayer.number = playersTeam2.length + timesSwitched2;
@@ -219,19 +224,24 @@ var Football;
             Football.selectedPlayer.precision = generateRandomNumber(minPrecision1, maxPrecision1);
             timesSwitched2++;
         }
+        // call function to show the values of the selected player
         showSelectedPlayerInfo();
     }
+    // 
     function getSelectedPlayer(_event) {
+        //find where the player clicked on canvas, consider offsets
         let mousePosition = new Football.Vector(_event.clientX - Football.crc2.canvas.offsetLeft, _event.clientY - Football.crc2.canvas.offsetTop);
+        // go through all players
         for (let player of Football.players) {
-            //if user clicked on a player
+            //if the position of the click is the same as the position of a player, the player has been clicked on
             if (player.position.x - 10 < mousePosition.x && player.position.x + 10 > mousePosition.x && player.position.y - 10 < mousePosition.y && player.position.y + 10 > mousePosition.y) {
-                // save which player was clicked last by user
+                // save which player was clicked last by user and call function to show their values
                 Football.selectedPlayer = player;
                 showSelectedPlayerInfo();
             }
         }
     }
+    // show the values of the last player who has been selected by user
     function showSelectedPlayerInfo() {
         //find DOM elements that display info of selected player and change DOM elements innerHTML to display info of selected player
         document.querySelector("#infoTeam").innerHTML = "Team: " + Football.selectedPlayer.team;
@@ -239,15 +249,20 @@ var Football;
         document.querySelector("#infoVelocity").innerHTML = "Velocity: " + Football.selectedPlayer.velocity;
         document.querySelector("#infoPrecision").innerHTML = "Precision: " + Football.selectedPlayer.precision;
     }
+    // 
     function getCurrentInfo() {
+        //find DOM element to display which player is currently in possession of the ball
         let possessingPlayer = document.querySelector("#possessingPlayer");
+        //go through all players
         for (let player of Football.players) {
+            // if player is in possession of the ball...
             if (player.inPossession) {
+                // change innerHTML to display to user which player is currently in possession
                 possessingPlayer.innerHTML = "Possession: Player " + player.number + " of team " + player.team;
             }
         }
     }
-    // look if the ball is currently in possession of a player or not
+    // look if the ball is currently in possession of a player or not, return boolean
     function ballInPossession() {
         let ballInPossession = false;
         for (let player of Football.players) {
@@ -257,6 +272,7 @@ var Football;
         }
         return ballInPossession;
     }
+    // generate a random number value between minimum and maximum
     function generateRandomNumber(_min, _max) {
         return Math.random() * (_max - _min) + _min;
     }

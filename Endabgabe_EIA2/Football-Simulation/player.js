@@ -63,9 +63,13 @@ var Football;
             }
         }
         returnToStart() {
+            // make the starting position of the player their new target
             this.target = this.startingPosition;
+            // get difference between current position and target
             let direction = new Football.Vector(this.target.x - this.position.x, this.target.y - this.position.y);
+            // scale direction with velocity
             direction.scale(this.velocity);
+            // add direction to the position
             this.position.add(direction);
         }
     }

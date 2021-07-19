@@ -59,6 +59,7 @@ namespace Football {
         crc2.fill();
         crc2.closePath();
 
+        //save in imageData for animation
         imageData = crc2.getImageData(0, 0, canvas.width, canvas.height);
     }
 }

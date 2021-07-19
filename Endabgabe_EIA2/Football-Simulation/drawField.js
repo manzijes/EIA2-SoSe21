@@ -53,6 +53,7 @@ var Football;
         Football.crc2.fillStyle = "white";
         Football.crc2.fill();
         Football.crc2.closePath();
+        //save in imageData for animation
         Football.imageData = Football.crc2.getImageData(0, 0, Football.canvas.width, Football.canvas.height);
     }
     Football.drawField = drawField;
