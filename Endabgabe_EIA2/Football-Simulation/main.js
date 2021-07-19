@@ -144,7 +144,7 @@ var Football;
         referee.draw();
         moveables.push(referee);
         // create football and push into moveables array
-        Football.football = new Football.Football(new Football.Vector(Football.canvas.width / 2, Football.canvas.height / 2), 0.01);
+        Football.football = new Football.Football(new Football.Vector(Football.canvas.width / 2, Football.canvas.height / 2), 0.015);
         Football.football.draw();
         moveables.push(Football.football);
     }

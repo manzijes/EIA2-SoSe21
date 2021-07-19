@@ -180,7 +180,7 @@ namespace Football {
         moveables.push(referee);
 
         // create football and push into moveables array
-        football = new Football(new Vector(canvas.width / 2, canvas.height / 2), 0.01);
+        football = new Football(new Vector(canvas.width / 2, canvas.height / 2), 0.015);
         football.draw();
         moveables.push(football);
     }
