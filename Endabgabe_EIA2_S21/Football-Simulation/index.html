@@ -1,0 +1,117 @@
+<!-- Endabgabe EIA2 S21
+    Jessica Manzi, MKB-2, 265101
+    Zusammenarbeit mit Michele-Chantal-Oeun. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football-Simulator</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+    <script src="vector.js"></script>
+    <script src="moveable.js"></script>
+    <script src="football.js"></script>
+    <script src="linesman.js"></script>
+    <script src="player.js"></script>
+    <script src="referee.js"></script>
+    <script src="drawField.js"></script>
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2 id="headline">Football-Simulator</h2>
+        <p id="text">Take a look at the simulator and become familiar with the instructions. As soon as you're ready, click start or press Enter.</p>
+    </header>
+
+    <!-- first page of the simulator (form, instructions) -->
+
+    <div id="flexForm">
+        <form id="form">
+            <fieldset>
+                <h4 class="subHeadline">Team 1</h4>
+
+                <p>Shirt Color</p>
+                <input type="color" name="color1" id="color1" value="#662d91">
+
+                <p>Velocity</p>
+                Min
+                <input type="range" name="minVelocity1" min="0.003" max="0.006" step="0.001" value="0.003" />
+                <input type="range" name="maxVelocity1" min="0.006" max="0.01" step="0.001" value="0.01" />
+                Max
+
+                <p>Precision</p>
+                Min
+                <input type="range" name="minPrecision1" min="0" max="8" step="1" value="0" />
+                <input type="range" name="maxPrecision1" min="8" max="16" step="0.1" value="16" />
+                Max
+                
+                <h4 class="subHeadline">Team 2</h4>
+
+                <p>Shirt Color</p>
+                <input type="color" name="color2" id="color2" value="#0000ff">
+
+                <p>Velocity</p>
+                Min
+                <input type="range" name="minVelocity2" min="0.003" max="0.006" step="0.001" value="0.003" />
+                <input type="range" name="maxVelocity2" min="0.006" max="0.01" step="0.001" value="0.01" />
+                Max
+                
+                <p>Precision</p>
+                Min
+                <input type="range" name="minPrecision2" min="0" max="8" step="1" value="0" />
+                <input type="range" name="maxPrecision2" min="8" max="16" step="1" value="16" />
+                Max
+            </fieldset>
+        </form>
+        <div id="flexInstructions">
+            <div id="instructions">
+                <h2 class="subHeadline">Instructions</h2>
+                <p> In this form, you can determine the properties of your teams such as velocity and precision ranges. In addition, you are free to choose each teams color.<br><br>
+                    In the simulation, as soon as a player is in possession of the ball, you can decide where they will aim to kick it.
+                    Depending on the players individual skills, wich will be randomly decided within the range of your chosen values, the ball will hit its target or not. The distance also plays a role.<br><br>
+                    By clicking on a player, you can see their info. <br>
+                    You can also switch players for new ones. <br><br>
+                    The higher the value of precision, the more likely the target will be missed. The higher the value of velocity, the faster the player will be. <br><br>
+                    <h2 class="subHeadline">Gameplay</h2>
+                    Click on a player to see their info. Double click on the field to shoot the ball.
+                </p>
+            </div>
+        </div>
+    </div>
+    <button id="btnStart">START</button>
+    
+    <!-- second page of the simulator  -->
+
+    <div id="flex">
+
+        <div id="currentInfo">
+            <p class="subHeadline">Current Status</p><br>
+            <p id="score">Score: 0:0</p>
+            <p id="possessingPlayer">Possession: None</p>
+        </div>
+
+        <div id="selectedPlayer">
+            <p class="subHeadline">Selected Player</p><br>
+            <p id="infoTeam">Team: None</p>
+            <p id="infoNumber">Number: None</p>
+            <p id="infoVelocity">Velocity: None</p>
+            <p id="infoPrecision">Precision: None</p>
+            <button id="btnSwitch">switch</button>
+        </div>
+
+    </div>
+
+    <div id="canvasDiv">
+        <canvas></canvas>
+    </div>
+    
+    <span id="displayColor1">Team 1</span>
+    <span id="displayColor2">Team 2</span>
+
+</body>
+
+</html>

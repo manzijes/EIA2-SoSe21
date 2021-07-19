@@ -1,0 +1,131 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    background-color: seagreen;
+    color: white;
+}
+
+header{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#headline{
+    font-size: 16pt;
+}
+
+#headline:hover{
+    cursor: pointer;
+}
+
+#flexForm {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#btnStart {
+    width: 15%;
+    height: 40px;
+    font-size: 12pt;
+    background-color: white;
+    border-radius: 14px;
+    display: inline;
+}
+
+#btnSwitch {
+    font-size: 12pt;
+    background-color: white;
+    border-radius: 14px;
+    margin-left: 20px;
+}
+
+#btnStart:hover, #btnSwitch:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+#displayColor1, #displayColor2 {
+    color: black;
+    padding: 2px;
+    border-radius: 12px;
+    display: none;
+}
+
+form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+fieldset {
+    justify-content: center;
+    border-radius: 15px;
+    background-color: white;
+    color: rgb(87, 42, 37);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+#flexInstructions {
+    width: 50%;
+}
+
+#instructions {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: white;
+    color: rgb(87, 42, 37)
+}
+
+input {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+canvas {
+    display: none;
+    background: darkseagreen;
+    margin-top: 10px;
+}
+
+#flex {
+    display: none;
+    flex-direction: row;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+#currentInfo, #selectedPlayer{
+    display: none;
+    border: solid black;
+    padding: 10px;
+    border-width: 1px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 12pt;
+    background: rgb(248, 248, 248);
+}
+
+#flex p{
+    display: inline;
+}
+
+.subHeadline{
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+/* Für Smarthphones mit einer width bis zu 869px */
+
+@media only screen and (max-width: 869px) {
+    canvas{
+        width: 100%;
+        height: 100%;
+    }
+}
